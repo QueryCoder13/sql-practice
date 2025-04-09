@@ -93,3 +93,22 @@ SELECT * FROM employees WHERE joining_date > '2021';
 ---- 4. Find the highest paid employee
  SELECT TOP 1 emp_name, salary FROM employees ORDER BY salary DESC;
 
+--WHERE – Employees who joined after 2022
+SELECT emp_name, joining_date FROM employees WHERE joining_date > '2022-01-01';
+
+--AND – Employees in department 3 with salary above 70000
+SELECT emp_name, dept_id, salary FROM employees WHERE dept_id = 3 AND salary > 70000;
+
+--OR – Employees in department 1 or 2
+SELECT emp_name, dept_id FROM employees WHERE dept_id = 1 OR dept_id = 2;
+
+--NOT – Employees who are not in department 4
+SELECT emp_name, dept_id FROM employees WHERE dept_id NOT IN (4);
+
+--Employees with salary between 50000 and 80000, sorted by joining date
+SELECT emp_name, salary, joining_date FROM employees WHERE salary >= 50000 AND salary <= 80000 ORDER BY joining_date ASC;
+
+
+
+
+
